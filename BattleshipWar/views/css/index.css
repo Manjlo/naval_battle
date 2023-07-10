@@ -14,6 +14,7 @@ body{
     background-image: url("../assets/sonido.png");
     border-color: #779564;
     border-radius: 10%;
+    left: 90vw;
 }
 .showSound.activo{
     background-image: url("../assets/silencio.png");
