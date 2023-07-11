@@ -27,13 +27,12 @@ body {
 
 .cell {
   background-color: #fff;
-  position: relative;
-}
-
-.ship-image {
-  width: 100%;
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
 }
+
+/* Estilos adicionales para las imágenes de los barcos */

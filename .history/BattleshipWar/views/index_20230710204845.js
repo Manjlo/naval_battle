@@ -27,10 +27,9 @@ class View {
 
         const ship = board.board[i][j];
         if (ship) {
+          cell.classList.add('ship-image'); // Agregar la clase ship-image a la celda
           cell.style.backgroundImage = `url(../assets/${ship.name}.png)`; // Ruta a la imagen del barco
-          cell.classList.add('ship-image');
         }
-
 
 
         this.playerBoard.appendChild(cell);

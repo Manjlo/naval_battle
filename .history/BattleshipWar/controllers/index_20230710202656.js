@@ -23,6 +23,15 @@ class Controller {
     // Logic to place ships on the player's board
     const ships = [
       { name: 'carrier', size: 4 },
+      { name: 'submarine', size: 3 },
+      { name: 'submarine', size: 3 },
+      { name: 'destroyer', size: 2 },
+      { name: 'destroyer', size: 2 },
+      { name: 'destroyer', size: 2 },
+      { name: 'frigate', size: 1 },
+      { name: 'frigate', size: 1 },
+      { name: 'frigate', size: 1 },
+      { name: 'frigate', size: 1 }
     ];
 
     for (const ship of ships) {
@@ -52,6 +61,7 @@ class Controller {
             continue;
           }
           //convert letter to number for row A-J
+          const realRow = rows.indexOf(row);
           console.log(row);
 
           for (let i = column; i < column + ship.size; i++) {
