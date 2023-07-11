@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../views/css/index.css">
-    <script type="module" src="../model/js/interfaceClasses.js"></script>
+    <audio id="warSound" src="../views/assets/audio.mp3" loop autoplay></audio>
     <title>Batalla Naval</title>
 </head>
 <body>
-    <div class="showStartPage" id="startPage">
+    <div class="showStartPage" id="home">
+        <h1>BATALLA NAVAL</h1>
         <button class="showSound" id="mute" onclick="showmute.show_mute()"></button>
+        <button class="gotoPlay" id="play" onclick=""></button>
     </div>
+    <div id="playPage">
+        
+    </div>
+
+
+
+
+    <!-- scripts -->
+    <script type="module" src="../model/js/interfaceClasses.js"></script>
+    <script type="module" src="../controllers/routes.js"></script>
 </body>
 </html>
