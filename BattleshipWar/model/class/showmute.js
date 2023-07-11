@@ -18,5 +18,4 @@ class showMute {
   }
 }
 
-
 window.showmute = new showMute();

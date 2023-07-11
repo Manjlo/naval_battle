@@ -3,25 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../views/assets/play.png" type="image/x-icon">
     <link rel="stylesheet" href="../views/css/index.css">
+    <!-- scripts -->
+    <script type="module" src="../model/class/showmute.js"></script>
+    <script type="module" src="../model/class/gotoplay.js"></script>
     <audio id="warSound" src="../views/assets/audio.mp3" loop autoplay></audio>
     <title>Batalla Naval</title>
 </head>
 <body>
     <div class="showStartPage" id="home">
         <h1>BATALLA NAVAL</h1>
-        <button class="showSound" id="mute" onclick="showmute.show_mute()"></button>
-        <button class="gotoPlay" id="play" onclick=""></button>
+        <button class="showSound" id="mute"></button>
+        <button class="gotoPlay" id="play" onclick="gotoplay.showPlayPage()"></button>
     </div>
-    <div id="playPage">
-        
+    <div class="showPlayPage" id="playPage">
+
     </div>
-
-
-
-
-    <!-- scripts -->
-    <script type="module" src="../model/js/interfaceClasses.js"></script>
-    <script type="module" src="../controllers/routes.js"></script>
 </body>
 </html>
