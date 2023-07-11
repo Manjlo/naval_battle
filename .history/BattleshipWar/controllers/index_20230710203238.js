@@ -23,6 +23,11 @@ class Controller {
     // Logic to place ships on the player's board
     const ships = [
       { name: 'carrier', size: 4 },
+      { name: 'submarine', size: 3 },
+      { name: 'frigate', size: 1 },
+      { name: 'frigate', size: 1 },
+      { name: 'frigate', size: 1 },
+      { name: 'frigate', size: 1 }
     ];
 
     for (const ship of ships) {

@@ -10,7 +10,7 @@ body {
 
 .game-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -21,19 +21,26 @@ body {
   grid-gap: 1px;
   background-color: #ccc;
   border: 1px solid #999;
-  width: 400px;
-  height: 400px;
 }
 
 .cell {
   background-color: #fff;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.ship-image {
-  width: 100%;
-  height: 100%;
+/* Estilos adicionales para las imágenes de los barcos */
+.cell {
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  background-size: cover;
+}
+
+/* Estilos para los tableros */
+#player-board {
+  width: 400px;
+}
+
+#opponent-board {
+  width: 400px;
 }

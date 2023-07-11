@@ -22,18 +22,25 @@ class Controller {
   placeShips() {
     // Logic to place ships on the player's board
     const ships = [
-      { name: 'carrier', size: 4 },
+      { name: 'Carrier', size: 4 },
+      { name: 'Submarine1', size: 3 },
+      { name: 'Submarine2', size: 3 },
+      { name: 'Destroyer1', size: 2 },
+      { name: 'Destroyer2', size: 2 },
+      { name: 'Destroyer3', size: 2 },
+      { name: 'Frigate1', size: 1 },
+      { name: 'Frigate2', size: 1 },
+      { name: 'Frigate3', size: 1 },
+      { name: 'Frigate4', size: 1 }
     ];
 
     for (const ship of ships) {
       let validPosition = false;
       let row, column, orientation;
       let currentShip = null;
-      const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+
       while (!validPosition) {
         row = prompt(`Ingrese la posicion inicial de la fila para ${ship.name} (A-J):`);
-        row = rows.indexOf(row.toUpperCase());
-        
         column = parseInt(prompt(`Ingrese la columna inicial para ${ship.name} (0-9):`));
         orientation = prompt(`ingrese la orientación ${ship.name} (h para horizontal, v para vertical):`).toLowerCase();
 
@@ -51,8 +58,6 @@ class Controller {
             validPosition = false;
             continue;
           }
-          //convert letter to number for row A-J
-          console.log(row);
 
           for (let i = column; i < column + ship.size; i++) {
             if (this.playerBoard.board[row][i]) {
@@ -62,10 +67,11 @@ class Controller {
             }
           }
         } else if (orientation === 'v') {
-
-  
+          const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+          //convert letter to number for row A-J
+          const realRow = rows.indexOf(row);
           
-          if (row + ship.size > 10) {
+          if (realRow + ship.size > 10) {
             alert('Posicion invalida. El barco excede los limites del tablero. Por favor, intente nuevamente.');
             validPosition = false;
             continue;
@@ -74,7 +80,7 @@ class Controller {
           for (let i = row; i < row + ship.size; i++) {
             if (this.playerBoard.board[i][column]) {
               validPosition = false;
-              alert('Posicion invalida. Ya hay un barco en esa ubicacion. Por favor, intente nuevamente.');
+              alert('Invalid position. There is already a ship in that location. Please try again.');
               break;
             }
           }
@@ -215,7 +221,6 @@ class Controller {
 
 
   makeComputerShot() {
-
     // Logic for the computer to make a random shot on the player's board
   }
 }

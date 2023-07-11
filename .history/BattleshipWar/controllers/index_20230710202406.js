@@ -23,17 +23,24 @@ class Controller {
     // Logic to place ships on the player's board
     const ships = [
       { name: 'carrier', size: 4 },
+      { name: 'submarine', size: 3 },
+      { name: 'submarine', size: 3 },
+      { name: 'destroyer', size: 2 },
+      { name: 'destroyer', size: 2 },
+      { name: 'destroyer', size: 2 },
+      { name: 'frigate', size: 1 },
+      { name: 'frigate', size: 1 },
+      { name: 'frigate', size: 1 },
+      { name: 'frigate', size: 1 }
     ];
 
     for (const ship of ships) {
       let validPosition = false;
       let row, column, orientation;
       let currentShip = null;
-      const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+
       while (!validPosition) {
-        row = prompt(`Ingrese la posicion inicial de la fila para ${ship.name} (A-J):`);
-        row = rows.indexOf(row.toUpperCase());
-        
+        row = parseInt(prompt(`Ingrese la posicion inicial de la fila para ${ship.name} (A-J):`));
         column = parseInt(prompt(`Ingrese la columna inicial para ${ship.name} (0-9):`));
         orientation = prompt(`ingrese la orientación ${ship.name} (h para horizontal, v para vertical):`).toLowerCase();
 
@@ -51,7 +58,9 @@ class Controller {
             validPosition = false;
             continue;
           }
+          const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
           //convert letter to number for row A-J
+          const realRow = rows.indexOf(row);
           console.log(row);
 
           for (let i = column; i < column + ship.size; i++) {

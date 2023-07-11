@@ -17,26 +17,25 @@ class View {
   }
 
   renderPlayerBoard(board) {
-    this.playerBoard.innerHTML = '';
-    for (let i = 0; i < board.rows; i++) {
-      for (let j = 0; j < board.columns; j++) {
-        const cell = document.createElement('div');
-        cell.className = 'cell';
-        cell.dataset.row = i;
-        cell.dataset.column = j;
+  this.playerBoard.innerHTML = '';
+  for (let i = 0; i < board.rows; i++) {
+    for (let j = 0; j < board.columns; j++) {
+      const cell = document.createElement('div');
+      cell.className = 'cell';
+      cell.dataset.row = i;
+      cell.dataset.column = j;
 
-        const ship = board.board[i][j];
-        if (ship) {
-          cell.style.backgroundImage = `url(../assets/${ship.name}.png)`; // Ruta a la imagen del barco
-          cell.classList.add('ship-image');
-        }
-
-
-
-        this.playerBoard.appendChild(cell);
+      const ship = board.board[i][j];
+      if (ship) {
+        cell.style.backgroundImage = `url(../assets/${ship.name}.png)`; // Ruta a la imagen del barco
+        cell.style.backgroundRepeat = 'no-repeat';
+        cell.style.backgroundSize = `${100 / ship.size}% auto`; // Ajustar el ancho de la celda según el tamaño del barco
       }
+
+      this.playerBoard.appendChild(cell);
     }
   }
+}
 
 
   renderOpponentBoard(board) {

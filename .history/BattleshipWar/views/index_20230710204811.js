@@ -27,8 +27,15 @@ class View {
 
         const ship = board.board[i][j];
         if (ship) {
-          cell.style.backgroundImage = `url(../assets/${ship.name}.png)`; // Ruta a la imagen del barco
-          cell.classList.add('ship-image');
+          const shipElement = document.createElement('div');
+          shipElement.classList.add('ship');
+
+          const shipImage = document.createElement('img');
+          shipImage.src = `../assets/${ship.name}.png`; // Ruta a la imagen del barco
+          shipImage.classList.add('ship-image');
+          shipElement.appendChild(shipImage);
+
+          cell.appendChild(shipElement);
         }
 
 
