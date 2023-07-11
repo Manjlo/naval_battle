@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-gap: 1px;
+  background-color: #ccc;
+  border: 1px solid #999;
+}
+
+.cell {
+  background-color: #fff;
+}
+
+/* Estilos adicionales para las imágenes de los barcos */
+.cell {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
